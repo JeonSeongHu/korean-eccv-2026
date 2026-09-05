@@ -7,6 +7,13 @@
   <meta name="description" content="Korean @ ECCV 2026 — a coffee-break social for Korean researchers attending ECCV 2026.">
   <meta property="og:title" content="Korean @ ECCV 2026">
   <meta property="og:description" content="A coffee-break social for Korean researchers attending ECCV 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rootyjeon.github.io/korean-eccv-2026/">
+  <!-- Text-only link previews: no og:image / twitter:image is declared on purpose,
+       and participant photos are CSS backgrounds (below) so scrapers find no page
+       image to fall back on. -->
+  <meta name="twitter:card" content="summary">
+  <meta name="robots" content="max-image-preview:none">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -94,18 +101,23 @@
     .people a { display: block; color: var(--text); }
     .people a:hover { text-decoration: none; }
     .people a:hover .name { color: var(--link); text-decoration: underline; }
-    .people img {
+    .people .avatar {
       width: 120px; height: 120px;
       border-radius: 50%;
-      object-fit: cover;
       display: block; margin: 0 auto 0.6rem;
-      background: #f1f3f5;
+      background-color: #f1f3f5;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     .people .name { font-weight: 700; display: block; line-height: 1.3; }
     .people .affil { display: block; color: var(--muted); font-size: 0.9rem; line-height: 1.4; margin-top: 0.15rem; }
 
     /* Placeholder avatar for participants without a photo yet */
-    .people img.placeholder { border: 1px dashed #ced4da; }
+    .people .avatar.placeholder {
+      border: 1px dashed #ced4da;
+      background-image: url(assets/img/placeholder.svg);
+    }
 
     footer {
       border-top: 1px solid var(--rule);
@@ -163,32 +175,37 @@
   <h2>Confirmed Participants</h2>
   <!--
     Add one <li> per participant. Photo is optional:
-    - With photo:    <img src="assets/img/NAME.jpg" alt="">
-    - Without photo: <img class="placeholder" src="assets/img/placeholder.svg" alt="">
+    - With photo:    <span class="avatar" role="img" aria-label="Full Name"
+                           style="background-image:url(assets/img/NAME.jpg)"></span>
+    - Without photo: <span class="avatar placeholder" aria-hidden="true"></span>
+    Photos are CSS backgrounds rather than image tags so that link-preview
+    scrapers have no page image to fall back on.
     Wrap in <a href="..."> only if the person has a personal page.
   -->
   <ul class="people">
     <li>
       <a href="https://sunghwanhong.github.io/" target="_blank" rel="noopener">
-        <img src="assets/img/sunghwan_hong.jpg" alt="Sunghwan Hong">
+        <span class="avatar" role="img" aria-label="Sunghwan Hong"
+              style="background-image:url(assets/img/sunghwan_hong.jpg)"></span>
         <span class="name">Sunghwan Hong</span>
         <span class="affil">PostDoc, ETH Zürich</span>
       </a>
     </li>
     <li>
       <a href="https://kingdy2002.github.io/" target="_blank" rel="noopener">
-        <img src="assets/img/dongyoung_kim.jpg" alt="Dongyoung Kim">
+        <span class="avatar" role="img" aria-label="Dongyoung Kim"
+              style="background-image:url(assets/img/dongyoung_kim.jpg)"></span>
         <span class="name">Dongyoung Kim</span>
         <span class="affil">Ph.D. Student, KAIST AI</span>
       </a>
     </li>
     <li>
-      <img class="placeholder" src="assets/img/placeholder.svg" alt="">
+      <span class="avatar placeholder" aria-hidden="true"></span>
       <span class="name">Participant Name</span>
       <span class="affil">Affiliation</span>
     </li>
     <li>
-      <img class="placeholder" src="assets/img/placeholder.svg" alt="">
+      <span class="avatar placeholder" aria-hidden="true"></span>
       <span class="name">Participant Name</span>
       <span class="affil">Affiliation</span>
     </li>
@@ -200,21 +217,24 @@
   <ul class="people">
     <li>
       <a href="https://rootyjeon.github.io/" target="_blank" rel="noopener">
-        <img src="assets/img/byungwoo_jeon.jpg" alt="Byungwoo Jeon">
+        <span class="avatar" role="img" aria-label="Byungwoo Jeon"
+              style="background-image:url(assets/img/byungwoo_jeon.jpg)"></span>
         <span class="name">Byungwoo Jeon</span>
         <span class="affil">Ph.D. Student, KAIST AI</span>
       </a>
     </li>
     <li>
       <a href="https://seonghunn.github.io/" target="_blank" rel="noopener">
-        <img src="assets/img/seonghun_oh.jpg" alt="Seonghun Oh">
+        <span class="avatar" role="img" aria-label="Seonghun Oh"
+              style="background-image:url(assets/img/seonghun_oh.jpg)"></span>
         <span class="name">Seonghun Oh</span>
         <span class="affil">MS Student, CMU</span>
       </a>
     </li>
     <li>
       <a href="https://jeonseonghu.github.io/" target="_blank" rel="noopener">
-        <img src="assets/img/seonghu_jeon.jpg" alt="Seonghu Jeon">
+        <span class="avatar" role="img" aria-label="Seonghu Jeon"
+              style="background-image:url(assets/img/seonghu_jeon.jpg)"></span>
         <span class="name">Seonghu Jeon</span>
         <span class="affil">Ph.D. Student, KAIST AI</span>
       </a>
