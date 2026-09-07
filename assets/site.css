@@ -158,7 +158,8 @@ button {
   min-width: 0;
   text-align: center;
 }
-.portrait-link {
+.portrait-link,
+.portrait-frame {
   display: block;
   width: 104px;
   height: 104px;
@@ -208,6 +209,38 @@ button {
 }
 .person-papers:hover {
   background: #efdef2;
+}
+.people-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+.people-pagination button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--foreground);
+  font-size: 13px;
+}
+.people-pagination button:hover:not(:disabled) {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.people-pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.people-pagination .page-status {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 .register-button {
   border: 1px solid var(--primary);
@@ -345,6 +378,7 @@ button {
     font-size: 12px;
   }
   .portrait-link,
+  .portrait-frame,
   .portrait {
     width: 94px;
     height: 94px;
@@ -399,6 +433,7 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .portrait-link,
+  .portrait-frame,
   .portrait {
     width: 90px;
     height: 90px;
@@ -454,6 +489,7 @@ button {
 }
 @media (max-width: 390px) {
   .portrait-link,
+  .portrait-frame,
   .portrait {
     width: 78px;
     height: 78px;
