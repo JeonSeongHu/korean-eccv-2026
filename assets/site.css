@@ -111,6 +111,40 @@ button {
 .skip-link:focus {
   top: 10px;
 }
+.venue-notice {
+  max-width: 1060px;
+  width: calc(100% - 60px);
+  margin: 20px auto;
+  padding: 18px 22px;
+  border: 1px solid #fca5a5;
+  border-left: 4px solid #dc2626;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.venue-notice h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 650;
+}
+.venue-notice p {
+  margin: 6px 0 0;
+}
+.venue-notice-location {
+  font-size: 15px;
+}
+.venue-notice a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.venue-notice a:hover {
+  color: #7f1d1d;
+}
 .people-section {
   padding-top: 39px;
 }
@@ -610,6 +644,46 @@ button {
 .about-facts a {
   color: var(--primary);
 }
+.event-venue {
+  max-width: 100%;
+}
+.event-venue span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.meetup-details {
+  max-width: 850px;
+  margin-top: 26px;
+  color: #595964;
+  font-size: 14px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.meetup-details h2 {
+  margin: 0 0 10px;
+  color: var(--foreground);
+  font-size: 18px;
+  font-weight: 550;
+}
+.meetup-details p {
+  margin: 10px 0 0;
+}
+.meetup-slots {
+  margin: 14px 0;
+  padding-left: 20px;
+}
+.meetup-slots li + li {
+  margin-top: 10px;
+}
+.meetup-details strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.meetup-details a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .people-section {
   padding-top: 29px;
   padding-bottom: 30px;
@@ -617,6 +691,11 @@ button {
   margin-bottom: 34px;
 }
 @media (max-width: 760px) {
+  .venue-notice {
+    width: calc(100% - 36px);
+    margin: 14px auto;
+    padding: 16px;
+  }
   .about-section {
     padding: 27px 0;
   }
